@@ -80,8 +80,8 @@ SELECT
 		 ELSE total_spending/ life_span 
 		 END AS average_monthly_spend,
 	life_span,
-	CASE WHEN life_span <= 12 AND total_spending > 5000 THEN 'VIP'
-		 WHEN life_span <= 12 AND total_spending <= 5000 THEN 'Regular'
+	CASE WHEN life_span >= 12 AND total_spending > 5000 THEN 'VIP'
+		 WHEN life_span >= 12 AND total_spending <= 5000 THEN 'Regular'
 		 ELSE 'New'
 	END AS customer_category
 FROM customer_aggregation
